@@ -32,9 +32,9 @@ jobs:
       - name: Git clone vyos-build
         run: git clone -b crux --single-branch https://github.com/vyos/vyos-build
 
-      - name: Build ISO (for Smoketests)
-        run: |
-          docker run --rm --privileged -v ./vyos-build/:/vyos -w /vyos vyos/vyos-build:current sudo --preserve-env ./build-vyos-image --architecture amd64 --build-by "autobuild@vyos.net" --vyos-mirror https://rolling-packages.vyos.net/current/ --debian-mirror http://deb.debian.org/debian/ --build-type release --custom-package vyos-1x-smoketest --version "${VYOS_VERSION}" iso
+#      - name: Build ISO (for Smoketests)
+#        run: |
+#          docker run --rm --privileged -v ./vyos-build/:/vyos -w /vyos vyos/vyos-build:current sudo --preserve-env ./build-vyos-image --architecture amd64 --build-by "autobuild@vyos.net" --vyos-mirror https://rolling-packages.vyos.net/current/ --debian-mirror http://deb.debian.org/debian/ --build-type release --custom-package vyos-1x-smoketest --version "${VYOS_VERSION}" iso
 
       - name: Run smoketests
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
@@ -60,7 +60,7 @@ jobs:
 
       - name: Build ISO
         run: |
-          docker run --rm --privileged -v ./vyos-build/:/vyos -w /vyos vyos/vyos-build:current sudo --preserve-env ./build-vyos-image --architecture amd64 --build-by "autobuild@vyos.net" --vyos-mirror https://rolling-packages.vyos.net/current/ --debian-mirror http://deb.debian.org/debian/ --build-type release --version "${VYOS_VERSION}" iso
+          docker run --rm --privileged -v ./vyos-build/:/vyos -w /vyos vyos/vyos-build:current sudo --preserve-env ./build-vyos-image --architecture amd64 --build-by "bartei81@gmail.com" --vyos-mirror https://rolling-packages.vyos.net/current/ --debian-mirror http://deb.debian.org/debian/ --build-type release --version "${VYOS_VERSION}" iso
 
       - name: Copy ISO
         run: |
