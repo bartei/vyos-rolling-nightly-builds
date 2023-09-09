@@ -27,6 +27,7 @@ jobs:
         set -eux
         
         git clone -b equuleus --single-branch https://github.com/vyos/vyos-build
+        cd wyos-build
         ./configure \
           --architecture amd64 \
           --build-by bartei81@gmail.com \
