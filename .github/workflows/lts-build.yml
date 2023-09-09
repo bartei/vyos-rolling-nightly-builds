@@ -45,11 +45,11 @@ jobs:
         set -eux
         make iso
 
-    - name: make iso
+    - name: make openstack
       working-directory: vyos-build
       run: |
         set -eux
-        make qemu
+        make openstack
 
     - name: ls
       run: |
