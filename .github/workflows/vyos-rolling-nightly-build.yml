@@ -29,7 +29,7 @@ jobs:
           --rm --privileged \
           -v ./vyos-build/:/vyos \
           -w /vyos vyos/vyos-build:equuleus \
-          sudo make openstack
+          sudo ./configure && sudo make openstack
 
       - name: List Contents
         run: |
