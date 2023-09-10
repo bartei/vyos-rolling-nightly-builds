@@ -53,3 +53,4 @@ jobs:
         generate_release_notes: false
         files: |
           vyos-build/build/vyos-${{ env.RELEASE_VERSION }}-amd64.iso
+          vyos-build/build/vyos-${{ env.RELEASE_VERSION }}-amd64.qcow2
