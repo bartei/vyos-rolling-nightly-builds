@@ -20,7 +20,7 @@ jobs:
     steps:
     - name: Set env
       run: |
-        echo "RELEASE_VERSION=LTS" >> $GITHUB_ENV 
+        echo "RELEASE_VERSION=${{ github.ref }}" >> $GITHUB_ENV 
 
     - name: git clone vyos-build
       run: |
@@ -43,27 +43,6 @@ jobs:
         pwd
         ls -lah
         ls -lah vyos-build/build
-
-#    - uses: actions/create-release@master
-#      id: create_release # ファイルアップロードに outputs の値を使用するため ID が必要
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      with:
-#        tag_name: ${{ github.ref }}
-#        release_name: VyOS ${{ github.ref }} LTS
-#        body: |
-#          VyOS ${{ env.RELEASE_VERSION }} LTS
-#        draft: true
-#        prerelease: true
-
-#    - uses: actions/upload-release-asset@master
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      with:
-#        upload_url: ${{ steps.create_release.outputs.upload_url }}
-#        asset_path: vyos-build/build/vyos-${{ env.RELEASE_VERSION }}-amd64.iso
-#        asset_name: vyos-${{ env.RELEASE_VERSION }}-amd64.iso
-#        asset_content_type: application/x-iso9660-image
 
     - name: Release
       uses: softprops/action-gh-release@v1
