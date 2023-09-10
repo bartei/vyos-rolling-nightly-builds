@@ -43,7 +43,7 @@ jobs:
 
         pwd
         ls -lah
-        ls -lah vyos-build/build
+        ls -lahR vyos-build/build
 
     - name: Release
       uses: softprops/action-gh-release@v1
