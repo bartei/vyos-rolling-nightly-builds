@@ -20,7 +20,7 @@ jobs:
     steps:
     - name: Set env
       run: |
-        echo "RELEASE_VERSION=${{ github.ref }}" >> $GITHUB_ENV 
+        echo "RELEASE_VERSION=${{ github.sha }}" >> $GITHUB_ENV 
 
     - name: git clone vyos-build
       run: |
