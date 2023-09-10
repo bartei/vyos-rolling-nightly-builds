@@ -34,29 +34,7 @@ jobs:
           --build-type release \
           --version ${{ env.RELEASE_VERSION }}
         make iso
-
-#    - name: configure
-#      working-directory: vyos-build
-#      run: |
-#        set -eux
-#
-#        ./configure \
-#          --architecture amd64 \
-#          --build-by bartei81@gmail.com \
-#          --build-type release \
-#          --version ${{ env.RELEASE_VERSION }}
-#
-#    - name: make iso
-#      working-directory: vyos-build
-#      run: |
-#        set -eux
-#        make iso
-#
-#    - name: make openstack
-#      working-directory: vyos-build
-#      run: |
-#        set -eux
-#        make openstack
+        make qemu
 
     - name: ls
       run: |
