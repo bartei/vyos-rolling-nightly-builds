@@ -35,7 +35,6 @@ jobs:
           --build-type release \
           --version ${{ env.RELEASE_VERSION }}
         make iso
-        make qemu
 
     - name: ls
       run: |
@@ -53,4 +52,3 @@ jobs:
         generate_release_notes: false
         files: |
           vyos-build/build/vyos-${{ env.RELEASE_VERSION }}-amd64.iso
-          vyos-build/build/vyos-${{ env.RELEASE_VERSION }}-amd64.qcow2
