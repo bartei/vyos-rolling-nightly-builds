@@ -29,11 +29,11 @@ jobs:
         git clone -b equuleus --single-branch https://github.com/vyos/vyos-build
         cd vyos-build
         mkdir -p build/vyos-refs/heads
-#        ./scripts/build-vyos-image \
-#          --architecture amd64 \
-#          --build-by bartei81@gmail.com \
-#          --build-type release \
-#          --version ${{ env.RELEASE_VERSION }}
+        ./configure \
+          --architecture amd64 \
+          --build-by bartei81@gmail.com \
+          --build-type release \
+          --version ${{ env.RELEASE_VERSION }}
         make iso
 
     - name: ls
