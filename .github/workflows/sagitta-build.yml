@@ -1,4 +1,4 @@
-name: VyOS Equuleus Build
+name: VyOS Sagitta Build
 
 on:
   workflow_dispatch:
@@ -20,7 +20,7 @@ jobs:
     steps:
     - name: Set env
       run: |
-        echo "RELEASE_VERSION=${{ github.sha }}" >> $GITHUB_ENV 
+        echo "RELEASE_VERSION=sagitta-${{ github.run_number }}" >> $GITHUB_ENV 
 
     - name: git clone vyos-build
       run: |
